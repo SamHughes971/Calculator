@@ -1,3 +1,10 @@
+const numberButton = document.querySelectorAll('.number-btn');
+const display = document.querySelector('.display')
+
+numberButton.forEach(e => e.style.backgroundColor= 'green');
+display.style.backgroundColor= 'lightblue'
+// display.textContent = 'random'
+
 function addition(numOne, numTwo){
     return numOne + numTwo;
 }
@@ -26,6 +33,21 @@ function operate(numOne, numTwo, operator){
         break;
     }
 }
+
+function changeDisplay(){
+    for(i=0;i<numberButton.length; i++){
+        numberButton[i].addEventListener('click',function (e) {
+            const displayValue = e.target.textContent;
+            display.textContent = displayValue;
+    })
+}}
+
+
+
+
+
+
+changeDisplay()
 
 const numOne = 8
 const numTwo = 3
