@@ -1,8 +1,8 @@
 const numberButton = document.querySelectorAll('.number-btn');
-const display = document.querySelector('.display')
 
+const display = document.querySelector('.display')
 numberButton.forEach(e => e.style.backgroundColor= 'green');
-display.style.backgroundColor= 'lightblue'
+
 // display.textContent = 'random'
 
 function addition(numOne, numTwo){
@@ -33,24 +33,28 @@ function operate(numOne, numTwo, operator){
         break;
     }
 }
-
-function changeDisplay(){
-    for(i=0;i<numberButton.length; i++){
-        numberButton[i].addEventListener('click',function (e) {
-            const displayValue = e.target.textContent;
-            display.textContent = displayValue;
+let x = []
+numberButton.forEach(element => {
+    element.addEventListener('click', e => {
+        const clicked = e.target;
+        display.innerText = clicked.textContent
+        x.push(clicked.textContent)
+        let value = x.join('');
+        console.log(value)
     })
-}}
+});
+
+function ran(){
+    console.log(x)
+}
+ran()
 
 
 
 
 
+// const numOne = 8
+// const numTwo = 3
+// const operator = '-'
 
-changeDisplay()
-
-const numOne = 8
-const numTwo = 3
-const operator = '-'
-
-operate(numOne, numTwo, operator);
+// operate(numOne, numTwo, operator);
