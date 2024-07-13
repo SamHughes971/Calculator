@@ -33,22 +33,29 @@ function operate(numOne, numTwo, operator){
         break;
     }
 }
+
+
+
 let x = []
-numberButton.forEach(element => {
-    element.addEventListener('click', e => {
-        const clicked = e.target;
-        display.innerText = clicked.textContent
-        x.push(clicked.textContent)
-        let value = x.join('');
-        console.log(value)
-    })
-});
-
-function ran(){
-    console.log(x)
+let displayNum = []
+function displayValue(){
+    numberButton.forEach(element => {
+        element.addEventListener('click', e => {
+            
+            const clicked = e.target;
+            display.innerText += clicked.textContent
+            displayNum.push(display.innerText)
+            
+        })
+    });
+    
 }
-ran()
 
+displayValue()
+
+// let y = x.map(e => e.join(''))
+// console.log(y)
+console.log(displayNum)
 
 
 
