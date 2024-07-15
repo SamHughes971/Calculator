@@ -42,7 +42,14 @@ function displayValue(flag){
         element.addEventListener('click', e => {
             const clicked = e.target;
             display.innerText += clicked.textContent //allow concat of value
-            displayNum1.push(display.innerText)
+            if(flag){
+                displayNum1.push(display.innerText)
+                console.log(`num1: ${displayNum1}`)
+            }
+            if(!flag){
+                displayNum2.push(display.innerText)
+                console.log(`num2: ${displayNum2}`)
+            }
         })
     });
     
@@ -50,7 +57,8 @@ function displayValue(flag){
 test1 = ["23", "32", "22"]
 test2 = ["23", "32", "33"]
 function calculate(){
-
+    let flag = false
+    displayValue(flag)
     let num1 = parseInt(test1[test1.length - 1]);
     let num2 = parseInt(test2[test2.length - 1]);
     operator = '+'
@@ -58,8 +66,6 @@ function calculate(){
     operate(num1, num2, operator)
 
 }
-
-
 
 calculate()
 
