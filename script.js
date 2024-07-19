@@ -43,6 +43,7 @@ let operatorSign = ''; // holds operator value
 operatorButton.forEach(element => {
     element.addEventListener('click', e =>{
         operatorSign = e.target.innerText;
+        display.innerText += e.target.textContent
         console.log(operatorSign)
         })
 })
