@@ -36,51 +36,34 @@ function operate(numOne, numTwo, operator){
     }
 }
 
-function operatorValue(){
-    operatorButton.forEach(element => {
-        element.addEventListener('click', e =>{
-            const clicked = e.target;
-            console.log(clicked.innerText)
+let firstNum = '';  // hold value of string
+let secondNum = '';
+let operatorSign = ''; // holds operator value
+
+operatorButton.forEach(element => {
+    element.addEventListener('click', e =>{
+        operatorSign = e.target.innerText;
+        console.log(operatorSign)
         })
-    })
+})
 
-}
-operatorValue()
+numberButton.forEach(element => {
+    element.addEventListener('click', e => {
+        display.innerText += e.target.textContent //allow concat of value
+        if(operatorSign === ''){
+            firstNum += e.target.innerText;
+            console.log(firstNum)
+        }
+        else{
+            secondNum +=e.target.innerText
+            console.log(secondNum)
 
-let displayNum1 = []  // hold value of string
-let displayNum2 = []
-//If flag is true -> allow displayNum1 to retrieve value. IF false -> allow displayNum2 to retrieve values
-function displayValue(flag){
-    numberButton.forEach(element => {
-        element.addEventListener('click', e => {
-            const clicked = e.target;
-            display.innerText += clicked.textContent //allow concat of value
-            if(flag){
-                displayNum1.push(display.innerText)
-                console.log(`num1: ${displayNum1}`)
-            }
-            if(!flag){
-                displayNum2.push(display.innerText)
-                console.log(`num2: ${displayNum2}`)
-            }
-        })
-    });
-    
-}
-// test1 = ["23", "32", "22"]
-// test2 = ["23", "32", "33"]
-function calculate(){
-    let flag = true
-    displayValue(flag)
-    let num1 = parseInt(displayNum1[displayNum1.length - 1]);
-    let num2 = parseInt(displayNum2[displayNum2.length - 1]);
-    operator = '+'
-    console.log(displayNum1, displayNum2)
-    operate(num1, num2, operator)
+        }})})
 
-}
 
-calculate()
+
+
+
 
 
 
