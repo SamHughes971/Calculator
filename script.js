@@ -21,19 +21,21 @@ function divide(numOne, numTwo){
 }
 
 function operate(numOne, numTwo, operator){
+    let result;
     switch(operator){
-        case '+': console.log(addition(numOne, numTwo));
+        case '+': result = addition(numOne, numTwo);
         break;
 
-        case '-': console.log(subtract(numOne, numTwo));
+        case '-': result = subtract(numOne, numTwo);
         break;
 
-        case '*': console.log(multiply(numOne, numTwo));
+        case '*': result = multiply(numOne, numTwo);
         break;
 
-        case '/': console.log(divide(numOne, numTwo));
+        case '/': result = divide(numOne, numTwo);
         break;
     }
+    return result
 }
 
 let firstNum = '';  // hold value of string
@@ -54,20 +56,17 @@ numberButton.forEach(element => {
         if(operatorSign === ''){
             firstNum += e.target.innerText;
             console.log(firstNum)
-            console.log(typeof firstNum)
         }
         else{
             secondNum +=e.target.innerText
             console.log(secondNum)
-            console.log(typeof secondNum)
-
         }})})
 
 equalButton.addEventListener('click', () => {
     firstNumClean = parseInt(firstNum);
     secondNumClean = parseInt(secondNum);
-
-    operate(firstNumClean, secondNumClean, operatorSign)
+    let operateResult = operate(firstNumClean, secondNumClean, operatorSign)
+    display.innerText = operateResult;
 
 })
 
