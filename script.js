@@ -1,7 +1,9 @@
 const numberButton = document.querySelectorAll('.number-btn');
 const operatorButton = document.querySelectorAll('.operator-btn');
+const equalButton = document.querySelector('.equals-btn');
 
 const display = document.querySelector('.display')
+equalButton.style.backgroundColor = "red";
 numberButton.forEach(e => e.style.backgroundColor= 'green');
 operatorButton.forEach(e => e.style.backgroundColor= 'lightblue');
 
@@ -54,12 +56,16 @@ numberButton.forEach(element => {
         if(operatorSign === ''){
             firstNum += e.target.innerText;
             console.log(firstNum)
+            console.log(typeof firstNum)
         }
         else{
             secondNum +=e.target.innerText
             console.log(secondNum)
+            console.log(typeof secondNum)
 
         }})})
+
+equalButton.addEventListener('click', () => operate(firstNum, secondNum, operatorSign))
 
 
 
@@ -72,4 +78,3 @@ numberButton.forEach(element => {
 // const numTwo = 3
 // const operator = '-'
 
-// operate(numOne, numTwo, operator);
