@@ -7,8 +7,6 @@ equalButton.style.backgroundColor = "red";
 numberButton.forEach(e => e.style.backgroundColor= 'green');
 operatorButton.forEach(e => e.style.backgroundColor= 'lightblue');
 
-// display.textContent = 'random'
-
 function addition(numOne, numTwo){
     return numOne + numTwo;
 }
@@ -65,7 +63,13 @@ numberButton.forEach(element => {
 
         }})})
 
-equalButton.addEventListener('click', () => operate(firstNum, secondNum, operatorSign))
+equalButton.addEventListener('click', () => {
+    firstNumClean = parseInt(firstNum);
+    secondNumClean = parseInt(secondNum);
+
+    operate(firstNumClean, secondNumClean, operatorSign)
+
+})
 
 
 
