@@ -42,6 +42,7 @@ let firstNum = '';  // hold value of string
 let secondNum = '';
 let operatorSign = ''; // holds operator value
 
+
 operatorButton.forEach(element => {
     element.addEventListener('click', e =>{
         operatorSign = e.target.innerText;
@@ -65,8 +66,13 @@ numberButton.forEach(element => {
 equalButton.addEventListener('click', () => {
     firstNumClean = parseInt(firstNum);
     secondNumClean = parseInt(secondNum);
+
     let operateResult = operate(firstNumClean, secondNumClean, operatorSign)
     display.innerText = operateResult;
+    console.log(typeof operateResult);
+
+    firstNum = operateResult;
+    secondNum = '';
 
 })
 
