@@ -69,7 +69,6 @@ equalButton.addEventListener('click', () => {
 
     let operateResult = operate(firstNumClean, secondNumClean, operatorSign)
     display.innerText = operateResult;
-    console.log(typeof operateResult);
 
     firstNum = operateResult;
     secondNum = '';
