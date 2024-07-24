@@ -1,6 +1,7 @@
 const numberButton = document.querySelectorAll('.number-btn');
 const operatorButton = document.querySelectorAll('.operator-btn');
 const equalButton = document.querySelector('.equals-btn');
+const clearButton = document.querySelector('.clear-btn');
 
 const display = document.querySelector('.display')
 equalButton.style.backgroundColor = "red";
@@ -72,17 +73,12 @@ equalButton.addEventListener('click', () => {
 
     firstNum = operateResult;
     secondNum = '';
-
 })
 
-
-
-
-
-
-
-
-// const numOne = 8
-// const numTwo = 3
-// const operator = '-'
+clearButton.addEventListener('click', ()=>{
+    display.innerText = '';
+    firstNum = '';  
+    secondNum = '';
+    operatorSign = ''
+})
 
