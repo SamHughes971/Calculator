@@ -18,7 +18,9 @@ function multiply(numOne, numTwo){
     return numOne * numTwo
 }
 function divide(numOne, numTwo){
-    return numOne / numTwo
+    if(numTwo == 0){
+        return display.textContent = 'Cannot divide by 0';
+    } else return numOne / numTwo;
 }
 
 function operate(numOne, numTwo, operator){
