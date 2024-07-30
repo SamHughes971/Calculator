@@ -56,10 +56,14 @@ operatorButton.forEach(element => {
 })
 
 decimalButton.addEventListener('click', e=>{
-    operatorSign = e.target.innerText;
     display.innerText += e.target.textContent
-
+    if(operatorSign === ''){
+        firstNum += e.target.innerText;
+    }
+    else{
+        secondNum +=e.target.innerText}
 })
+
 numberButton.forEach(element => {
     element.addEventListener('click', e => {
         display.innerText += e.target.textContent //allow concat of value
@@ -73,8 +77,8 @@ numberButton.forEach(element => {
         }})})
 
 equalButton.addEventListener('click', () => {
-    firstNumClean = parseInt(firstNum);
-    secondNumClean = parseInt(secondNum);
+    firstNumClean = parseFloat(firstNum);
+    secondNumClean = parseFloat(secondNum);
 
     let operateResult = operate(firstNumClean, secondNumClean, operatorSign)
     display.innerText = operateResult;
