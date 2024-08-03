@@ -5,9 +5,7 @@ const clearButton = document.querySelector('.clear-btn');
 const decimalButton = document.querySelector('.decimal-btn');
 
 const display = document.querySelector('.display')
-equalButton.style.backgroundColor = "red";
-numberButton.forEach(e => e.style.backgroundColor= 'green');
-operatorButton.forEach(e => e.style.backgroundColor= 'lightblue');
+
 
 function addition(numOne, numTwo){
     return numOne + numTwo;
@@ -42,9 +40,9 @@ function operate(numOne, numTwo, operator){
     return result
 }
 
-let firstNum = '';  // hold value of string
+let firstNum = '';  
 let secondNum = '';
-let operatorSign = ''; // holds operator value
+let operatorSign = ''; 
 
 
 operatorButton.forEach(element => {
@@ -66,7 +64,7 @@ decimalButton.addEventListener('click', e=>{
 
 numberButton.forEach(element => {
     element.addEventListener('click', e => {
-        display.innerText += e.target.textContent //allow concat of value
+        display.innerText += e.target.textContent 
         if(operatorSign === ''){
             firstNum += e.target.innerText;
             console.log(firstNum)

@@ -10,10 +10,6 @@
     background: #3A4655;
 }
 
-.calculator{
-    background-color: grey;
-}
-
 .display{
     background-color: white;
     height: 30px;
@@ -25,12 +21,28 @@
     margin-top: 20px;
 }
 
-.number-btn, .decimal-btn, .operator-btn{
+.number-btn{
+    background-color: #3A4655;
     padding: 8px;
+    color: white;
 }
 
-.clear-btn, .equals-btn{
-    padding: 15px;
-    width: 60px;
-    background-color: orange;
+.decimal-btn, .operator-btn, .equals-btn{
+    background-color: #3A4655;
+    padding: 8px;
+    color: orange;
+}
+
+.clear-btn{
+    padding: 10px;
+    width: 117px;
+    background: white;
+    color: black;
+}
+
+.number-btn:hover {
+    color: orange;
+  }
+.operator-btn:hover{
+    color: white;
 }
