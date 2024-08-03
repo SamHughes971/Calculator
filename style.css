@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: auto;
+    min-height: 300px;
+    box-shadow: 0 8px 50px -7px black;
+    background: #3A4655;
+}
+
+.calculator{
+    background-color: grey;
+}
+
+.display{
+    background-color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.row-one{
+    margin-top: 20px;
+}
+
+.number-btn, .decimal-btn, .operator-btn{
+    padding: 8px;
+}
+
+.clear-btn, .equals-btn{
+    padding: 15px;
+    width: 60px;
+    background-color: orange;
+}
