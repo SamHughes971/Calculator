@@ -56,10 +56,16 @@ operatorButton.forEach(element => {
 decimalButton.addEventListener('click', e=>{
     display.innerText += e.target.textContent
     if(operatorSign === ''){
-        firstNum += e.target.innerText;
+        if(firstNum.indexOf('.') == -1){
+            firstNum += e.target.innerText;
+        } else{display.innerText = 'invalid operation'}   
     }
     else{
-        secondNum +=e.target.innerText}
+        if(secondNum.indexOf('.') == -1){
+            secondNum += e.target.innerText;
+        } else{display.innerText = 'invalid operation'}
+        
+    }
 })
 
 numberButton.forEach(element => {
@@ -83,6 +89,7 @@ equalButton.addEventListener('click', () => {
 
     firstNum = operateResult;
     secondNum = '';
+    
 })
 
 clearButton.addEventListener('click', ()=>{
